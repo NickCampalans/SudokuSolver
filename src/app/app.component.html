@@ -3,8 +3,8 @@
         <div *ngFor="let columna of fila; index as indexColumna">
             <canvas-path fillStyle="rgb(220, 220, 220)">
                 <canvas-rect 
-                    [x]="indexFila * 60" 
-                    [y]="indexColumna * 60" 
+                    [x]="indexColumna * 60" 
+                    [y]="indexFila * 60" 
                     [width]="50" 
                     [height]="50">
                 </canvas-rect>
@@ -13,8 +13,8 @@
                     [maxWidth]="200"
                     [text]="game[indexFila][indexColumna]"
                     [font]="font"
-                    [x]="indexFila * 60 + 10"
-                    [y]="indexColumna * 60 + 40">
+                    [x]="indexColumna * 60 + 10"
+                    [y]="indexFila * 60 + 40">
                 </canvas-text>
             </canvas-path>
         </div>
