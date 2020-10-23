@@ -43,4 +43,18 @@ export class AppComponent {
     [7, 7, 7, 8, 8, 8, 9, 9, 9],
     [7, 7, 7, 8, 8, 8, 9, 9, 9]
   ];
+
+  colorTextInitial = '#ffa500';
+  colorTextUserFilled = '#000000';
+  font = 'bold 40px "Lucida Bright"';
+
+  setTextColor(idxF, idxC) {
+    if (this.type[idxF][idxC] === 1) {
+      return this.colorTextInitial;
+    } else if(this.type[idxF][idxC] === 2) {
+      return this.colorTextUserFilled;
+    } else {
+      return '#ff0000'; //Aquest cas no hauria de passar mai. Pinta vermell.
+    }
+  }
 }

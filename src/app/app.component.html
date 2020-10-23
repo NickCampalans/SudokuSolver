@@ -1,7 +1,22 @@
-<div class="flex-grid">
-    <div *ngFor="let element of game; index as colIndex;" class="col">
-        <div class="cell" *ngFor="let row of game[colIndex]; index as rowIndex">
-            <p>{{colIndex}} , {{rowIndex}}</p>
+<canvas waCanvas2d [width]="980" [height]="980">
+    <div *ngFor="let fila of game; index as indexFila">
+        <div *ngFor="let columna of fila; index as indexColumna">
+            <canvas-path fillStyle="rgb(220, 220, 220)">
+                <canvas-rect 
+                    [x]="indexFila * 60" 
+                    [y]="indexColumna * 60" 
+                    [width]="50" 
+                    [height]="50">
+                </canvas-rect>
+                <canvas-text *ngIf="type[indexFila][indexColumna] !== 0"
+                    [fillStyle]="setTextColor(indexFila, indexColumna)"
+                    [maxWidth]="200"
+                    [text]="game[indexFila][indexColumna]"
+                    [font]="font"
+                    [x]="indexFila * 60 + 10"
+                    [y]="indexColumna * 60 + 40">
+                </canvas-text>
+            </canvas-path>
         </div>
     </div>
-</div>
+</canvas>
